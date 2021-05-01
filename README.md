@@ -1,2 +1,2 @@
 # dotNet5-practice
-.NET5+
+.NET5+Angularの練習 
