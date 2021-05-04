@@ -20,3 +20,38 @@ Dockerコンテナにて開発環境を構築する
      ```sh
      docker stop test
      ```
+
+## Docker独自の設定
+* Properties/launchSettings.json の修正  
+  **applicationUrl**を修正する  
+  ```json
+   {
+   〜中略〜
+   "profiles": {
+   〜中略〜
+      },
+      "source": {
+         "commandName": "Project",
+         "launchBrowser": true,
+         "applicationUrl": "http://localhost:5000,http://localhost:5001",
+         "environmentVariables": {
+         "ASPNETCORE_ENVIRONMENT": "Development"
+         }
+      }
+   }
+  ```
+  ↓
+  ```json
+   {
+   〜中略〜
+   "profiles": {
+   〜中略〜
+      },
+      "source": {
+   〜中略〜
+         "applicationUrl": "http://+:5000,http://+:5001",
+   〜中略〜
+         }
+      }
+   }
+  ```
