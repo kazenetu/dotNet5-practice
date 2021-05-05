@@ -4,6 +4,7 @@
 
 <p *ngIf="!forecasts"><em>Loading...</em></p>
 
+<button (click)="postRequest()">POSTで再取得</button>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
   <thead>
     <tr>
