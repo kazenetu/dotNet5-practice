@@ -435,3 +435,5 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 
+#WindowsDocker Environment File
+!windows.env
