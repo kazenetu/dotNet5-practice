@@ -12,9 +12,14 @@ Dockerコンテナにて開発環境を構築する
 
 * Dockerコンテナの実行と終了
   1. Dockerコンテナの実行(コンテナ名：test)
-     ```sh
-     docker run --rm -d -t -p 5000:5000 -v $PWD/source/:/source --name test dotnet5 
-     ```
+     * Windows用
+       ```sh
+       docker run --rm -d -t -p 5000:5000 -v $PWD/source/:/source --name test  --env-file=windows.env dotnet5 
+       ```
+     * Linux・Mac
+       ```sh
+       docker run --rm -d -t -p 5000:5000 -v $PWD/source/:/source --name test dotnet5 
+       ```
 
   1. Dockerコンテナの終了
      ```sh
