@@ -1,8 +1,9 @@
 using System;
+using source.Interfaces;
 
 namespace source
 {
-    public class WeatherForecast
+    public class WeatherForecast: IWeatherForecast
     {
         public DateTime Date { get; set; }
 
