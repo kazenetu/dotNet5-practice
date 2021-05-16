@@ -18,3 +18,13 @@ RUN apt-get update
 RUN apt-get install -y dotnet-sdk-5.0
 
 WORKDIR /source
+
+# create tools/CStoTS
+RUN mkdir -p /tools/CStoTS \
+    mkdir -p /tool_temp \
+    && git clone --recursive https://github.com/kazenetu/CStoTS.git /tool_temp \
+    && cd /tool_temp \
+    && dotnet publish ConvertCStoTS -c Release -o /tools/CStoTS -f net5.0
+RUN echo '#!/bin/sh \ncd /source\ndotnet /tools/CStoTS/ConvertCStoTS.dll Interfaces/ -o ClientApp/src/interfaces/' > /tools/CStoTS.sh \
+    && chmod +x /tools/CStoTS.sh
+ENV PATH $PATH:/tools
