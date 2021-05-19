@@ -26,6 +26,15 @@ Dockerコンテナにて開発環境を構築する
      docker stop test
      ```
 
+  * <span>C#</span>をTypeScriptに変換するツールの実行  
+    **source/Interfaces/*.cs**を**source/ClientApp/src/interfaces/*.ts**に変換するツールの実行  
+    拙作[CStoTS](https://github.com/kazenetu/CStoTS)を使用。  
+    ```sh
+    CStoTS.sh
+    ```  
+    ※実態は*tools/CStoTS/*
+  
+
 ## Docker独自の設定
 * Properties/launchSettings.json の修正  
   **applicationUrl**を修正する  
