@@ -8,6 +8,9 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash
 RUN apt-get install -y nodejs
 RUN npm install -g npm@7.11.1
 
+# install angular/cli:8.3.29
+RUN npm install -g @angular/cli@8.3.29
+
 # install dotnet-sdk
 RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
