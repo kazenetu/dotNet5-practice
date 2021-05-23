@@ -31,3 +31,8 @@ RUN mkdir -p /tools/CStoTS \
 RUN echo '#!/bin/sh \ncd /source\ndotnet /tools/CStoTS/ConvertCStoTS.dll Interfaces/ -o ClientApp/src/interfaces/' > /tools/CStoTS.sh \
     && chmod +x /tools/CStoTS.sh
 ENV PATH $PATH:/tools
+
+# create client and server files
+COPY docker_resource/template.cs /tools/template.cs
+COPY docker_resource/create.txt /tools/create.sh
+RUN chmod +x /tools/create.sh

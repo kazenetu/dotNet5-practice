@@ -1,0 +1,8 @@
+#!/bin/sh 
+cd /source/ClientApp/src/app
+ng g component $1 --module app.module
+chmod 777 $1
+
+cd /source/Controllers
+CSClassName="`echo $1 | sed 's/\(.\)\(.*.\)/\U\1\L\2/g'`"
+sed -e 's/%temp%/'$CSClassName'/g' /tools/template.cs> "$CSClassName"Controller.cs
