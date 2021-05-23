@@ -34,6 +34,16 @@ Dockerコンテナにて開発環境を構築する
     ```  
     ※実態は*tools/CStoTS/*
   
+  * フロントエンドとサーバーサイドのソースコードを作成するツールの実行  
+    下記を作成する
+    * source/Controllers/**引数(名称)**.cs
+    * source/ClientApp/src/app/**引数(名称)**.ts
+    * source/ClientApp/src/app/**引数(名称)**.html
+    * source/ClientApp/src/app/**引数(名称)**.spec.ts
+    ```sh
+    create.sh 引数(名称)
+    ```  
+  
 
 ## Docker独自の設定
 * Properties/launchSettings.json の修正  
